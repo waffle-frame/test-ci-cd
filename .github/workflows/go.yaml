@@ -22,13 +22,14 @@ jobs:
           go-version: 1.19
 
       - name: Install go-swagger core
-          run: download_url=$(curl -s https://api.github.com/repos/go-swagger/go-swagger/releases/latest | \
-            jq -r '.assets[] | select(.name | contains("'"$(uname | tr '[:upper:]' '[:lower:]')"'_amd64")) | .browser_download_url')
-            curl -o /usr/local/bin/swagger -L'#' "$download_url"
-            chmod +x /usr/local/bin/swagger
+        run: |-
+          download_url=$(curl -s https://api.github.com/repos/go-swagger/go-swagger/releases/latest | \
+          jq -r '.assets[] | select(.name | contains("'"$(uname | tr '[:upper:]' '[:lower:]')"'_amd64")) | .browser_download_url')
+          curl -o /usr/local/bin/swagger -L'#' "$download_url"
+          chmod +x /usr/local/bin/swagger
 
       - name: Build
         run: make build
 
       - name: Generate documentation
-        run: make docs
+        run: make docs &&
