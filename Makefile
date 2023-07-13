@@ -1,6 +1,5 @@
 # TODO: ---
 PROJECTNAME=$(shell basename "$(PWD)")
-PID=/tmp/.$(PROJECTNAME)-api-server.pid
 
 # Documentation generation
 .PHONY: docs
