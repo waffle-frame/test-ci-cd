@@ -7,6 +7,7 @@ on:
   pull_request:
     branches: ["master"]
 
+# Set go-swagger core path
 env:
   IMAGE_NAME: /usr/local/bin/swagger
 
@@ -33,3 +34,6 @@ jobs:
 
       - name: Generate documentation
         run: make docs
+
+      - name: Run project
+        run: make run
