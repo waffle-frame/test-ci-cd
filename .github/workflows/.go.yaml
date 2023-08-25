@@ -35,5 +35,5 @@ jobs:
       - name: Generate documentation
         run: make docs
 
-      - name: Run project
-        run: make run
+      # - name: Run project
+      #   run: make run
