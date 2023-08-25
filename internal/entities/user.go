@@ -6,4 +6,5 @@ type User struct {
 	Name    string `json:"-"`
 	Address string `json:"-"`
 	City    string `json:"-"`
+	Sex     string `json:"-"`
 }
