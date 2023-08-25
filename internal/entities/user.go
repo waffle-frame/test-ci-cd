@@ -1,6 +1,7 @@
 package entities
 
 // User ...
-type User struct{
-	ID uint `json:"-"`
+type User struct {
+	ID   uint   `json:"-"`
+	Name string `json:"-"`
 }
